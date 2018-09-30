@@ -1,0 +1,82 @@
+﻿@model BookCollection.Models.Bookstore
+
+@{
+    ViewBag.Title = "SearchedBooks";
+}
+
+<h2>SearchedBooks</h2>
+
+<hr />
+
+<div>
+    <table class="table" >
+        <tr class="danger">
+            <th>
+                BookId
+            </th>
+            <th>
+                BookTitle
+            </th>
+            <th>
+                BookAuthor
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Pages
+            </th>
+            <th>
+                Tags
+            </th>
+            <th>
+                Favourite
+            </th>
+        </tr>
+
+        @foreach (var item in ViewBag.allsearch)
+        {
+            <tr class="warning">
+
+                <td>
+                    @item.BookId
+                </td>
+                <td>
+                    @item.BookTitle
+                </td>
+                <td>
+                    @item.BookAuthor
+                </td>
+                <td>
+                    @item.Location
+                </td>
+                <td>
+                    @item.Category
+                </td>
+                <td>
+                    @item.Pages
+                </td>
+                <td>
+                    @item.Tags
+                </td>
+                <td>
+                    <form method="POST" name=@Html.Encode(item.BookId) action="/Bookmains/SearchedBooks">
+                        <input type="hidden" name="id" value="@Html.Encode(item.BookId)">
+                        <input type="submit" class="btn btn-danger" value="Like" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div>
+    <hr />
+    <button style="margin-left:490px" class="btn btn-success">@Html.ActionLink("Cancel", "Bookfront", "Bookmains")</button>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

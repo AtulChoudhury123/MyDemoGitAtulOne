@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBOneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bookstore">
+    <Key>
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="BookId" Type="int" Nullable="false" />
+    <Property Name="BookTitle" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="BookAuthor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location" Type="varchar(max)" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pages" Type="int" Nullable="false" />
+    <Property Name="Tags" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="favourite" Type="int" />
+  </EntityType>
+  <EntityContainer Name="DBOneModelStoreContainer">
+    <EntitySet Name="Bookstore" EntityType="Self.Bookstore" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

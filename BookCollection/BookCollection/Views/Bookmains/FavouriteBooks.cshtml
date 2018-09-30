@@ -1,0 +1,65 @@
+﻿@model BookCollection.Models.Bookstore
+
+@{
+    ViewBag.Title = "FavouriteBooks";
+}
+
+<h2>Favourite Books</h2>
+<hr />
+<table class="table table-hover text-center">
+    <tr class="text-center">
+        <th class="success">
+            BookId
+        </th>
+        <th>
+            BookTitle
+        </th>
+        <th>
+            BookAuthor
+        </th>
+        <th>
+            Location
+        </th>
+        <th>
+            Category
+        </th>
+        <th>
+            Pages
+        </th>
+        <th>
+            Tags
+        </th>
+    </tr>
+
+    @foreach (var item in ViewBag.favs)
+    {
+        <tr class="warning">
+
+            <td>
+                @item.BookId
+            </td>
+            <td>
+                @item.BookTitle
+            </td>
+            <td>
+                @item.BookAuthor
+            </td>
+            <td>
+                @item.Location
+            </td>
+            <td>
+                @item.Category
+            </td>
+            <td>
+                @item.Pages
+            </td>
+            <td>
+                @item.Tags
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    <hr />
+    <button style="margin-left:490px" class="btn btn-success">@Html.ActionLink("Cancel", "Bookfront", "Bookmains")</button>
+</div>

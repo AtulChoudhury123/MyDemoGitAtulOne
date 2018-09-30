@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBOneModelStoreContainer" CdmEntityContainer="DBOneModelstwo">
+    <EntitySetMapping Name="Bookstores">
+      <EntityTypeMapping TypeName="DBOneModel.Bookstore">
+        <MappingFragment StoreEntitySet="Bookstore">
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+          <ScalarProperty Name="BookAuthor" ColumnName="BookAuthor" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Pages" ColumnName="Pages" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="favourite" ColumnName="favourite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

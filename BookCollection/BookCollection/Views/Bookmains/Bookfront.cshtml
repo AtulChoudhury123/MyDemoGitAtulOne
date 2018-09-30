@@ -1,0 +1,68 @@
+﻿@model BookCollection.Models.Bookstore
+
+@{
+    ViewBag.Title = "Bookfront";
+}
+
+<!--<h2>Online Library</h2>-->
+
+
+@using (Html.BeginForm("Bookfront", "Bookmains",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="w3-content " style="max-width:100%">
+    <img class="mySlides" src="~/Pictures/picmainone.jpg" style="width:100%">
+    <img class="mySlides" src="~/Pictures/temel-reklamcilik-kitaplari-00.jpg" style="width:100%">
+    <img class="mySlides" src="~/Pictures/picmainthree.jpg" style="width:100%">
+    <div class="w3-display-middle form-horizontal ">
+        <!--<h4>Welcome</h4>-->
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Search, htmlAttributes: new { @class = "control-label col-xs-3 text-primary" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Search, new { htmlAttributes = new { @class = "form-control  " } })
+                @Html.ValidationMessageFor(model => model.Search, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group" style="margin-right:40px">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-success" />
+                <button type="button" class="btn btn-warning">@Html.ActionLink("Add Book", "Addbooks", "Bookmains")</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+        <script type="text/javascript">
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) { myIndex = 1 }
+                x[myIndex - 1].style.display = "block";
+                setTimeout(carousel, 2000); // Change image every 2 seconds
+            }
+        </script>
+
+        }
+
+
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
