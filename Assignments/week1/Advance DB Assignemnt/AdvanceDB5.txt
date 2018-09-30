@@ -1,0 +1,36 @@
+
+1.create function getAverageSales()
+returns int 
+as 
+begin 
+return(select avg(salesamount) from product)
+end 
+go
+
+select dbo.getAverageSales();
+
+2.create function getGrade(@id int)
+returns int 
+as 
+begin 
+declare @result int 
+if((select grade from employee where empid=@id)='C')
+select @result =1
+else
+if((select grade from employee where empid=@id)='A')
+select @result=2
+else
+if((select grade from employee where empid=@id)='T')
+select @result=3
+else
+if((select grade from employee where empid=@id)='B')
+select @result=4
+else 
+select @result=0
+return @result
+end 
+go
+
+
+select dbo.getGrade(4);
+

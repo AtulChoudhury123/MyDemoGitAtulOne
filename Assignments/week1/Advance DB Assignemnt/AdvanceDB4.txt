@@ -1,0 +1,35 @@
+create table table_employee(
+frst varchar(50),
+sec varchar(50),
+third varchar(50)
+);
+
+
+
+
+alter procedure insertEmployee
+@input varchar(MAX)
+as 
+declare @loc int;
+declare @col1 varchar(50);
+declare @col2 varchar(50);
+declare @col3 varchar(50);
+select @loc =CHARINDEX('|',@input)-1
+select @col1=SUBSTRING(@input, 1, @loc);
+set @loc=@loc+2;
+select @input =SUBSTRING(@input,@loc,LEN(@input));
+
+select @loc =CHARINDEX('|',@input)-1
+select @col2=SUBSTRING(@input, 1, @loc);
+set @loc=@loc+2;
+select @input =SUBSTRING(@input,@loc,LEN(@input));
+
+select @loc =CHARINDEX('|',@input)-1
+select @col3=SUBSTRING(@input, 1, @loc);
+set @loc=@loc+2;
+select @input =SUBSTRING(@input,@loc,LEN(@input));
+insert into table_employee values (@col1, @col2, @col3);
+
+go
+
+exec insertEmployee ' 1003|John|11000|A ';

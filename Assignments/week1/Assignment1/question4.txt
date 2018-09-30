@@ -1,0 +1,86 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp15
+{
+    public abstract class Cars
+    {
+        public void callFacility()
+        {
+            Console.WriteLine("call facitlity ");
+        }
+        public void checkAc()
+        {
+            Console.WriteLine("Maintain Ac");
+        }
+        abstract public void colors();
+        abstract public void getTotalSeat();
+        abstract public void price();
+        public void wheel()
+        {
+            Console.WriteLine("four wheels");
+        }
+    }
+
+    interface IGps
+    {
+        void gps();
+    }
+    class Hyundai : Cars, IGps
+    {
+        public override void colors()
+        {
+            Console.WriteLine("color are balck , red , blue");
+        }
+        public override void getTotalSeat()
+        {
+            Console.WriteLine("six seater car");
+        }
+        public override void price()
+        {
+            Console.WriteLine("price is Rs 1200000");
+        }
+        public void gps()
+        {
+            Console.WriteLine( "Gps is active");
+        }
+    }
+
+    class Toyota: Cars
+    {
+        public override void colors()
+        {
+            Console.WriteLine("color are balck , red , blue");
+        }
+        public override void getTotalSeat()
+        {
+            Console.WriteLine("six seater car");
+        }
+        public override void price()
+        {
+            Console.WriteLine("price is Rs 1200000");
+        }
+        public void DiscountedPrice()
+        {
+            Console.WriteLine("the discounted price is 1000000");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Hyundai h = new Hyundai();
+            Console.WriteLine("Hyndai details");
+            h.colors();
+            h.getTotalSeat();
+            h.gps();
+            h.price();
+            h.callFacility();
+            h.checkAc();
+            h.wheel();
+        }
+    }
+}

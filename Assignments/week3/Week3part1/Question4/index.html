@@ -1,0 +1,50 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Question4</title>
+    </head>
+    <body>
+        <fieldset style="margin-left:80px; margin-right:900px">
+         <div align="center">
+            <label>Enter the first number</label><br>
+            <input type="text" id="frst" value=""><br><br>
+            <label>Enter the second number</label><br>
+            <input type="text" id="sec" value=""><br><br>
+            
+            <select id="math" >
+                <option value="Add">Add</option>
+                <option value="Subtract">Subtract</option>
+                <option value="Multiply">Multiply</option>
+                <option value="Divide">Divide</option >
+            </select><br><br>
+            <input type="submit" onclick="myfunction()" value="Submit"/>
+  
+           <p>The result is: <span style="color:blue" id="res"></span></p>
+        </div>
+        </fieldset>
+
+        <script>
+            function myfunction(){
+                var x=Number(document.getElementById("frst").value);
+                var y=Number(document.getElementById("sec").value);
+                var z=document.getElementById("math").value;
+                if(z=="Add"){
+                    var sum=x+y;
+                    document.getElementById("res").innerHTML=sum;
+                }
+                if(z=="Subtract"){
+                   var sum=x-y;
+                    document.getElementById("res").innerHTML=sum;
+                }
+                if(z=="Multiply"){
+                    var sum=x*y;
+                    document.getElementById("res").innerHTML=sum;
+                }
+                if(z=="Divide"){
+                   var sum=x/y;
+                    document.getElementById("res").innerHTML=sum;
+                }
+            }
+            </script>
+    </body>
+</html>

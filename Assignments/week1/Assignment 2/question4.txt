@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp6
+{
+    //Assignment2 question4
+    class Person:Object
+    {
+        String name;
+        int age;
+        char sex;
+
+        public string Name { get => name; set => name = value; }
+        public int Age { get => age; set => age = value; }
+        public char Sex { get => sex; set => sex = value; }
+
+        public override bool Equals(Object obj)
+        {
+            Person x = (Person)obj;
+            if(this.name== x.Name && this.age==x.Age && this.sex == x.Sex)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Person p1 = new Person();
+            p1.Name = "Atul";
+            p1.Age = 24;
+            p1.Sex = 'M';
+           
+            Person p2 = new Person();
+            p2.Name = "Jack";
+            p2.Age = 23;
+            p2.Sex = 'M';
+
+            if (p1.Equals(p2))
+            {
+                Console.WriteLine("both are equal");
+            }
+            else
+            {
+                Console.WriteLine("Not equal");
+            }
+        }
+    }
+}

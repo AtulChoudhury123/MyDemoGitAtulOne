@@ -1,0 +1,51 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string usn="1AS09CS010";
+		if(usn.Length==10) {
+			if(usn[0]=='1' || usn[0]=='2') {
+				char c1=usn[1];
+				char c2=usn[2];
+				if(Char.IsUpper(c1) && Char.IsUpper(c2) ) {
+					Char d1=usn[3];
+					Char d2=usn[4];
+					if(Char.IsDigit(d1) && Char.IsDigit(d2)) {
+						Char e1=usn[5];
+						Char e2=usn[6];
+						if((Char.IsUpper(e1)&& Char.IsUpper(e2))&&(e1=='C'|| e1=='I' || e1=='E' || e1=='M')&&(e2=='C'||  e2=='S'|| e2=='E')) {
+							Char f1=usn[7];
+							Char f2=usn[8];
+							Char f3=usn[9];
+							if(Char.IsDigit(f1) && Char.IsDigit(f2) && Char.IsDigit(f3) ) {
+								Console.WriteLine("Success");
+							}
+							else {
+								Console.WriteLine("Failure6");
+							}
+							
+						}
+						else {
+							Console.WriteLine("Failure5");
+						}
+					}
+					else {
+						Console.WriteLine("Failure4");
+					}
+				}
+				else {
+					Console.WriteLine("Failure3");
+				}
+			}
+			else{
+				Console.WriteLine("Failure2");
+			}
+		}
+		else {
+			Console.WriteLine("Failure1");
+		}
+
+	}
+}

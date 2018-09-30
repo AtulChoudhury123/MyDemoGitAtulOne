@@ -1,0 +1,40 @@
+1.create Procedure EmpProc
+@id int,
+@name varchar(30) output
+As
+select @name=empName from Employee where empId=@id
+delete from Employee where empId=@id
+Go
+
+declare @name varchar(30);
+exec EmpProc 1, @name output
+print @name;
+
+2.alter procedure sp_Get_Grade
+@empId int,
+@grade char output
+As
+select isnull(grade,'X') from employee where empId=@empId
+select @grade=grade from employee where empId=@empId
+Go
+
+
+
+declare @grade char(1);
+exec sp_Get_Grade 6, @grade output
+print @grade
+
+3.alter procedure sp_Check_Grade
+@empID int,
+@msg varchar(40) output
+As
+declare @grade char(1)
+exec sp_Get_Grade @empID, @grade output
+set @msg=case when @grade!='X' then  @grade else 'grade not found' end 
+Go
+
+declare @msg varchar(40);
+exec sp_Check_Grade 6, @msg output;
+print @msg;
+
+

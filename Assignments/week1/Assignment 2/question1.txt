@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp4
+{
+    class Hotel
+    {
+        private long hotelId;
+        private string briefNote;
+        private string hotelName;
+        private string photoURL;
+        private int starRanking;
+
+        public long HotelId { get => hotelId; set => hotelId = value; }
+        public string BriefNote { get => briefNote; set => briefNote = value; }
+        public string HotelName { get => hotelName; set => hotelName = value; }
+        public string PhotoURL { get => photoURL; set => photoURL = value; }
+        public int StarRanking { get => starRanking; set => starRanking = value; }
+
+        public Hotel storeData(Hotel h)
+        {
+            Console.WriteLine("hotel id");
+            h.HotelId = long.Parse(Console.ReadLine());
+            Console.WriteLine("briefnote");
+            h.BriefNote = Console.ReadLine();
+            Console.WriteLine("hotel name");
+            h.HotelName = Console.ReadLine();
+            Console.WriteLine("photourl");
+            h.PhotoURL = Console.ReadLine();
+            Console.WriteLine("ranking");
+            h.StarRanking = Convert.ToInt32(Console.ReadLine());
+            return h;
+        }
+
+        public void showData(Hotel h)
+        {
+            Console.WriteLine("hotelid ={0} ,briefnote={1}, hotename={2}, photoURL={3}, startRanking={4}",
+               h.HotelId,h.BriefNote,h.HotelName,h.PhotoURL,h.StarRanking );
+        }
+    }
+    //Assigemnt2Question1
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("How many hotels");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Hotel[] h = new Hotel[n];
+            Hotel[] h2 = new Hotel[n];
+            Hotel h1 = new Hotel();
+
+            for(int i = 0; i < h.Length; i++)
+            {
+                h[i] = new Hotel();
+                h2[i]=h1.storeData(h[i]);
+            }
+
+            for(int i = 0; i < h2.Length; i++)
+            {
+                h1.showData(h2[i]);
+            }
+        }
+    }
+}

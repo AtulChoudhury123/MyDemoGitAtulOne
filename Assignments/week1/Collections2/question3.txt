@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace ConsoleApp17
+{
+    class CustomArrayList :IEnumerable
+    {
+        ArrayList items;
+        int iteratorCount;
+
+        public CustomArrayList() {
+            items = new ArrayList();
+            iteratorCount = -1;
+        }
+
+        public void AddItem(Object itemToAdd) {
+            items.Add(itemToAdd);
+        }
+
+       public IEnumerator GetEnumerator()
+        {
+            foreach (object current in items)
+            {
+                
+                if (++iteratorCount>=items.Count)
+                {
+                    break;
+                }
+
+              
+                yield return current;// current contais 1,2,3,4 and the get enumerator function is preserved every time
+            }                          //while returning a value so dat next value is returned when called again
+
+
+        }
+
+        class Program
+        {
+        static void Main(string[] args)
+        {
+            CustomArrayList myCustomArray = new CustomArrayList();
+            myCustomArray.AddItem("1");
+            myCustomArray.AddItem("2");
+            myCustomArray.AddItem("3");
+            myCustomArray.AddItem("4");
+
+                foreach (object s in myCustomArray)
+                {
+                    Console.WriteLine(s);
+                }
+
+            }
+        }
+}

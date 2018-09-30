@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class ClsPerson
+    {
+        private string name;
+        private int age;
+        private string dateOfBirth;
+
+        public string Name { get => name; set => name = value; }
+        public int Age { get => age; set => age = value; }
+        public string DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }
+
+        public bool canVote()
+        {
+            if (this.age >= 18)
+                return true;
+            else
+                return false;
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("enter number of persons");
+            int n = Convert.ToInt32(Console.ReadLine());
+            ClsPerson[] p = new ClsPerson[n];
+
+            for (int i = 0; i < p.Length; i++)
+            {
+                p[i] = new ClsPerson();
+                Console.WriteLine("enter name");
+                p[i].Name = Console.ReadLine();
+                Console.WriteLine("enter age");
+                p[i].Age = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("enter date of birth");
+                p[i].DateOfBirth = Console.ReadLine();
+            }
+
+            SortedList<string, ClsPerson> s = new SortedList<string, ClsPerson>();
+            for (int i = 0; i <p.Length; i++)
+            {
+                s.Add(p[i].Name, p[i]);
+            }
+            foreach (ClsPerson t in s.Values)
+            {
+                if (t.canVote())
+                {
+                    Console.WriteLine(t.Name + " can vote");
+                }
+                else
+                {
+                    Console.WriteLine(t.Name+" cannot vote");
+                }
+
+            }
+        }
+    }
+}

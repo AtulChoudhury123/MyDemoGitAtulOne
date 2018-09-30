@@ -1,0 +1,113 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace ConsoleApp11
+{
+    //asignment2 question 10
+    class City
+    {
+        long cityId;
+        string cityName;
+        string state;
+
+        public long CityId { get => cityId; set => cityId = value; }
+        public string CityName { get => cityName; set => cityName = value; }
+        public string State { get => state; set => state = value; }
+    }
+    class Hotel : City
+    {
+        long hotelId;
+        string briefNote;
+        string hotelName;
+        string photoUrl;
+        int starRanking;
+        private ArrayList arr;
+        public long HotelId { get => hotelId; set => hotelId = value; }
+        public string BriefNote { get => briefNote; set => briefNote = value; }
+        public string HotelName { get => hotelName; set => hotelName = value; }
+        public string PhotoUrl { get => photoUrl; set => photoUrl = value; }
+        public int StarRanking { get => starRanking; set => starRanking = value; }
+        public ArrayList Arr { get => arr; set => arr = value; }
+    }
+
+    class Review
+    {
+        long reviewId;
+        string createDate;
+        byte isActive;
+        byte isReportAbuse;
+        string reviewText;
+        string reviewer;
+
+        public long ReviewId { get => reviewId; set => reviewId = value; }
+        public string CreateDate { get => createDate; set => createDate = value; }
+        public byte IsActive { get => isActive; set => isActive = value; }
+        public byte IsReportAbuse { get => isReportAbuse; set => isReportAbuse = value; }
+        public string ReviewText { get => reviewText; set => reviewText = value; }
+        public string Reviewer { get => reviewer; set => reviewer = value; }
+    }
+    class HotelManager
+    {
+       public Hotel hmain;
+        public void createHotel(Hotel h)
+        {
+            
+            h.HotelId = Convert.ToInt32(Console.ReadLine());
+            h.BriefNote = Console.ReadLine();
+            h.HotelName= Console.ReadLine(); 
+            h.PhotoUrl= Console.ReadLine();
+            h.StarRanking= Convert.ToInt32(Console.ReadLine());
+            h.CityId= Convert.ToInt32(Console.ReadLine()); 
+            h.CityName= Console.ReadLine();
+            h.State= Console.ReadLine();
+            Console.WriteLine("Please give review");
+            int n= Convert.ToInt32(Console.ReadLine());
+            Review[] r = new Review[n];
+            h.Arr = new ArrayList();
+            for (int i = 0; i <r.Length; i++)
+            {
+                r[i].ReviewId= Convert.ToInt32(Console.ReadLine());
+                r[i].CreateDate = Console.ReadLine();
+                r[i].IsActive = Convert.ToByte(Console.Read());
+                r[i].IsReportAbuse= Convert.ToByte(Console.Read());
+                r[i].ReviewText = Console.ReadLine();
+                r[i].Reviewer = Console.ReadLine();
+
+                h.Arr.Add(r);
+            }
+            hmain = h;   
+        }
+
+        public void showHotelDetails(Hotel h)
+        {
+         Console.WriteLine("hotelId={0}, briefNote={1}, hotelNAme={2}, photoURL={3}, starRanking={4}, " +
+             "cityName={5}, state={6}",h.HotelId,h.BriefNote, h.HotelName, h.PhotoUrl,h.StarRanking, h.CityName,h.State);
+        }
+
+        public void showReviews(Hotel h)
+        {
+            foreach (Review i in h.Arr)
+            {
+             Console.WriteLine("review id={0}, created date={1}, isActive={2}, isReportAbused={3}," +
+           " reviewText={4}, reviewer={5} ",i.ReviewId, i.CreateDate, i.IsActive,i.IsReportAbuse,i.ReviewText,i.Reviewer);
+            }
+            
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Hotel h1 = new Hotel();
+            HotelManager hm = new HotelManager();
+            hm.createHotel(h1);
+            hm.showHotelDetails(hm.hmain);
+            hm.showReviews(hm.hmain);
+        }
+    }
+}

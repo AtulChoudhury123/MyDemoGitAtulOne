@@ -1,0 +1,57 @@
+
+using System;
+
+class User{
+
+	public int userId;
+	public string dateOfBirth;
+	public string userName;
+	public char gender;
+	public string gurdianName;
+	
+	public User(int userId, string dateOfBirth,string userName, char gender, string gurdianName){
+		this.userId=userId;
+		this.dateOfBirth=dateOfBirth;
+		this.userName=userName;
+		this.gender=gender;
+		this.gurdianName=gurdianName;
+	}
+}	
+
+class UserManager{
+	
+	public static User createUser(User u){
+		
+		u.userId=Convert.ToInt32(Console.ReadLine());
+		u.dateOfBirth=Console.ReadLine();
+		u.userName=Console.ReadLine();
+		u.gender=Console.ReadKey().KeyChar;
+		u.gurdianName=Console.ReadLine();	
+		return u;
+		
+	}
+	
+	public static void showData(User u){
+		Console.WriteLine("UserId={0} , dateOFBirth={1} , userNAme={2} , Gender={3} , GurdianName={4}", 
+		u.userId,u.dateOfBirth,u.userName,u.gender,u.gurdianName);
+	}
+	
+}
+					
+public class Program
+{
+	public static void Main()
+	{
+	
+		int userId=Convert.ToInt32(Console.ReadLine());
+		string dateOfBirth=Console.ReadLine();
+		string userName=Console.ReadLine();
+		char gender=Console.ReadKey().KeyChar;
+		string gurdianName=Console.ReadLine();
+		
+		User u1=new User(userId,dateOfBirth,userName,gender,gurdianName);
+		User u=UserManager.createUser(u1);
+		UserManager.showData(u);
+		
+	}
+}

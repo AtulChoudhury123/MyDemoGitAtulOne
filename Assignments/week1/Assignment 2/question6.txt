@@ -1,0 +1,111 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    //Assignment2 Question6
+    //author : Atul DC
+   abstract class Room
+    {
+        int room;
+        int floor;
+        int cost;
+
+        public int Room1 { get => room; set => room = value; }
+        public int Floor { get => floor; set => floor = value; }
+        public int Cost { get => cost; set => cost = value; }
+    }
+    class ConferenceRoom : Room
+    {
+        int noOfChairs;
+        int noOfWhiteBoards;
+        int noOfProjectors;
+
+        public int NoOfChairs { get => noOfChairs; set => noOfChairs = value; }
+        public int NoOfWhiteBoards { get => noOfWhiteBoards; set => noOfWhiteBoards = value; }
+        public int NoOfProjectors { get => noOfProjectors; set => noOfProjectors = value; }
+    }
+
+    class GuestRoom : Room
+    {
+        int noOfBeds;
+        bool extraBedAllowed;
+        string roomType;
+
+        public int NoOfBeds { get => noOfBeds; set => noOfBeds = value; }
+        public bool ExtraBedAllowed { get => extraBedAllowed; set => extraBedAllowed = value; }
+        public string RoomType { get => roomType; set => roomType = value; }
+    }
+
+    class RoomBookingManager
+    {
+        public void bookRoom(Room r)
+        {
+            if(r is ConferenceRoom){
+                ConferenceRoom r1 = (ConferenceRoom)r;
+                Console.WriteLine("room no");
+                r1.Room1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("floor no");
+                r1.Floor = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("cost");
+                r1.Cost = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("no of chairs");
+                r1.NoOfChairs = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("white boards");
+                r1.NoOfWhiteBoards = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("projectors");
+                r1.NoOfProjectors= Convert.ToInt32(Console.ReadLine()); ;
+            }
+            if (r is GuestRoom)
+            {
+                GuestRoom r1 = (GuestRoom)r;
+                Console.WriteLine("room no");
+                r1.Room1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("floor no");
+                r1.Floor = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("cost");
+                r1.Cost = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("noOfbeds");
+                r1.NoOfBeds= Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("extrabed");
+                r1.ExtraBedAllowed = Convert.ToBoolean(Convert.ToInt32(Console.ReadLine()));
+                Console.WriteLine("room type");
+                r1.RoomType = Console.ReadLine();
+            }
+        }
+
+        public void showData(Room r)
+        {
+            if(r is ConferenceRoom)
+            {
+                ConferenceRoom r1 = (ConferenceRoom)r;
+                Console.WriteLine("roomno={0}, floorno={1}, cost={2}, no of chairs={3}," +" no of white boards={4}," +
+                    " no of projectors={5} ",r1.Room1,r1.Floor,r1.Cost, r1.NoOfChairs,r1.NoOfWhiteBoards, r1.NoOfWhiteBoards);
+            }
+            if (r is GuestRoom)
+            {
+                GuestRoom r1 = (GuestRoom)r;
+                Console.WriteLine("roomno={0}, floorno={1}, cost={2}, no of bed={3}," + " extra bed allowed ={4}," +
+                    " room type={5} ", r1.Room1, r1.Floor, r1.Cost, r1.NoOfBeds, r1.ExtraBedAllowed, r1.RoomType);
+            }
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+         
+            RoomBookingManager rm = new RoomBookingManager();  
+            Room r1 = new ConferenceRoom();
+            Room r2 = new GuestRoom();
+            rm.bookRoom(r1);
+            rm.bookRoom(r2);
+            rm.showData(r1);
+            rm.showData(r2);
+           
+        }
+    }
+}

@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;					
+public class Program
+{
+	public static void Main()
+	{
+		int n=Convert.ToInt32(Console.ReadLine());
+		int[] a=new int[n];
+		
+		for(int i=0;i<n;i++){
+			a[i]=Convert.ToInt32(Console.ReadLine());
+		}
+		
+		HashSet<int> h=new HashSet<int>();
+		
+		for(int i=0;i<a.Length;i++){
+			h.Add(a[i]);
+		}
+		
+		foreach(int x in h ){
+			Console.WriteLine(x);
+		}
+		
+	}
+}

@@ -1,0 +1,168 @@
+using System;
+
+class Account{
+	
+	private int accountNo;
+	private string accountType;
+	private int debitCardNo;
+	private int pin;
+	private string loginId;
+	private string password;
+	private double balance;
+	
+	//getters and setters
+	public int AccountNo{
+		set{
+			this.accountNo=value;	
+		}
+		get{
+			return this.accountNo;
+		}
+	}
+	
+	public string AccountType{
+		set{
+			this.accountType=value;	
+		}
+		get{
+			return this.accountType;
+		}
+	}
+	
+	public int DebitCardNo{
+		set{
+			this.debitCardNo=value;	
+		}
+		get{
+			return this.debitCardNo;
+		}
+	}
+	
+	public int Pin{
+		set{
+			this.pin=value;	
+		}
+		get{
+			return this.pin;
+		}
+	}
+	
+	public string LoginId{
+		set{
+			this.loginId=value;	
+		}
+		get{
+			return this.loginId;
+		}
+	}
+	
+	public string Password{
+		set{
+			this.password=value;	
+		}
+		get{
+			return this.password;
+		}
+	}
+	
+	public double Balance{
+		set{
+			this.balance=value;	
+		}
+		get{
+			return this.balance;
+		}
+	}
+	
+	
+	
+}
+
+class Current:Account{
+	
+	private string companyName;
+	private string typeOfBussiness;
+	private string website;
+	private string contactName;
+	
+	public string CompanyName{
+		set{
+			this.companyName=value;	
+		}
+		get{
+			return this.companyName;
+		}
+	}
+	
+	public string TypeOfBussiness{
+		set{
+			this.typeOfBussiness=value;	
+		}
+		get{
+			return this.typeOfBussiness;
+		}
+	}
+	
+	public string Website{
+		set{
+			this.website=value;	
+		}
+		get{
+			return this.website;
+		}
+	}
+	
+	public string ContactName{
+		set{
+			this.contactName=value;	
+		}
+		get{
+			return this.contactName;
+		}
+	}
+	
+}
+
+class Saving_Corporate{
+
+string companyName;
+public string CompanyName{
+		set{
+			this.companyName=value;	
+		}
+		get{
+			return this.companyName;
+		}
+	}	
+}
+
+class AccountMgr{
+	public Account createAccount(Account acc){
+		
+		acc.AccountNo=Convert.ToInt32(Console.ReadLine());
+		acc.AccountType=Console.ReadLine();
+		acc.DebitCardNo=Convert.ToInt32(Console.ReadLine());
+		acc.Pin=Convert.ToInt32(Console.ReadLine());
+		acc.LoginId=Console.ReadLine();
+		acc.Password=Console.ReadLine();
+		acc.Balance=Double.Parse(Console.ReadLine());
+		return acc;
+	}
+	
+	public void showData(Account acc){
+		Console.WriteLine("account no={0} , accounttype={1}, debitcardno={2}, pin={3}, login={4}, password={5} , balance={6}",
+						 acc.AccountNo,acc.AccountType,acc.DebitCardNo,acc.Pin,acc.LoginId,acc.Password,acc.Balance);
+	}
+}
+
+public class Program
+{
+	public static void Main()
+	{
+		Account a1=new Current();
+		AccountMgr am=new AccountMgr();
+		Account a2=am.createAccount(a1);
+		am.showData(a2);
+		
+	}
+}

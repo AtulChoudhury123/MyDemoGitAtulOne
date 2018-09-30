@@ -1,0 +1,87 @@
+using System;
+using System.Text.RegularExpressions;
+
+class InvalidUserIdException:Exception{
+	string msg;
+	public InvalidUserIdException(string message){
+		this.msg=message;
+	}
+	
+	public string getMessage(){
+		return msg;
+	}
+}
+
+class InvalidPasswordException:Exception{
+	string msg;
+	public InvalidPasswordException(string message){
+		this.msg=message;
+	}
+	
+	public string getMessage(){
+		return msg;
+	}
+}
+
+class User{
+	public long userId{set;get;}
+	public string dateOfBirth{set;get;}
+	public string fullName{set;get;}
+	public string gender{set;get;}
+	public string emailId{set;get;}
+	public string password{set;get;}	
+	
+}
+
+class UserManager {
+	
+	public User createUser(User u){
+		bool flag=false;
+		u.userId=long.Parse(Console.ReadLine());
+		
+		if(u.userId<99999){
+			throw new InvalidUserIdException("InvalidUserIdException");
+		}
+		
+		u.dateOfBirth=Console.ReadLine();
+		u.fullName=Console.ReadLine();
+		u.gender=Console.ReadLine();;
+		u.emailId=Console.ReadLine();
+		u.password=Console.ReadLine();
+		
+		 Regex regex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$");
+            Match match = regex.Match(u.password);
+		if(!match.Success){
+			throw new InvalidPasswordException("InvalidPasswordException");
+		}
+		
+		
+		return u;
+	}
+	
+	public void showUserIdDetails(User u){
+		Console.WriteLine("UserId={0}, dateOfBirth={1}, FullName={2}, Gender={3}, Email={4} , Password={5}",
+						  u.userId,u.dateOfBirth, u.fullName, u.gender,u.emailId,u.password);
+	}
+	
+}
+public class Program
+{
+	public static void Main()
+	{
+		
+		User u1=new User();
+		UserManager u2=new UserManager();
+		try{
+		u1=u2.createUser(u1);
+		u2.showUserIdDetails(u1);
+		}
+		catch(InvalidUserIdException e){
+			Console.WriteLine(e.getMessage());
+		}
+		catch(InvalidPasswordException ex){
+			Console.WriteLine(ex.getMessage());
+		}
+		
+	}
+}

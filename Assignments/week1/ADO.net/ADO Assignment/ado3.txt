@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection conn = new SqlConnection("data source=.; database=DBOne; integrated security=SSPI");
+            // to tell which procedure to use(previously use to write query)
+            SqlCommand cmd = new SqlCommand("myProc",conn);
+            //setting the cmd type to store procedure explicitely
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            //setting the first input variable name nd its datattype(variable name same as given while creating procedure )
+            cmd.Parameters.Add(new SqlParameter("@name", System.Data.SqlDbType.VarChar));
+            //giving the input to variable  
+            cmd.Parameters["@name"].Value = "Ross";
+            //setting the output variable name and its datattype(variable name same as given while creating procedure )
+            cmd.Parameters.Add(new SqlParameter("@param3", System.Data.SqlDbType.Int));
+            // exec myProc 'Rose',  @param3 output 
+            cmd.Parameters["@param3"].Direction = System.Data.ParameterDirection.Output;
+            conn.Open();
+            // store procedure is a non query
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            //output
+            Console.WriteLine(cmd.Parameters["@param3"].Value.ToString());
+        }
+    }
+}

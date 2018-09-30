@@ -1,0 +1,45 @@
+using System;	
+using System.Collections;
+
+public class Program
+{
+	public static void Main()
+	{
+		Queue q=new Queue();
+		q.Enqueue("String1");
+		q.Enqueue("String2");
+		q.Enqueue("String4");
+		q.Enqueue("String5");
+		
+		foreach(string i in q)
+			Console.WriteLine(i);
+		
+		ArrayList a=new ArrayList();
+		
+		foreach(string i in q){
+			a.Add(i);
+		}
+		
+		int count=0;
+		foreach(string i in a){
+			count++;
+			if(i=="String2")
+				break;
+		}
+		a.Insert(count,"String3");
+		q.Clear();
+		
+		foreach(string i in a){
+			q.Enqueue(i);
+		}
+	
+		Console.WriteLine("New Queue");
+		
+		foreach(string i in q)
+			Console.WriteLine(i);
+		
+		
+		
+	}
+		
+}

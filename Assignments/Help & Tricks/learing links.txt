@@ -1,0 +1,5 @@
+__https://www.codeproject.com/Articles/8971/C-Coding-Standards-and-Best-Programming-Practices __https://www.c-sharpcorner.com/UploadFile/8a67c0/C-Sharp-coding-standards-and-naming-conventions/ __http://www.icsharpcode.net/technotes/sharpdevelopcodingstyle03.pdf 
+
+____https://www.youtube.com/watch?v=80CcB9_HSxU 
+
+____https://www.youtube.com/watch?v=9qWpfTW_c5Y 

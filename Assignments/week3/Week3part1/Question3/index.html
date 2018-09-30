@@ -1,0 +1,65 @@
+
+<!Doctype html>
+<html>
+    <head>
+        <title>
+            Question3
+        </title>
+    </head>
+    <body>
+
+        <fieldset style="margin-left: 40px;margin-right: 700px">
+            <form>
+        <table>
+            <tr>
+                <td> <label>Title:</label></td>
+                <td><select name="title">
+                    <option value="">Mr.</option>
+                    <option value="">Mrs.</option>
+                </select></td>
+            </tr>
+            <tr><td> <label>First Name:</label></td><td><input type="text" id="fname" value="" required></td></tr>
+            <tr><td> <label>Last Name:</label></td><td> <input type="text" id="lname" value="" required/></td></tr>
+            <tr><td> <label>Address:</label></td><td><input type="text" id="address" value="" required/></td></tr>
+            <tr><td> <label>City:</label></td><td><input type="text" id="city" value="" required/></td></tr>
+            <tr><td> <label>State:</label></td><td><input type="text" id="state" value="" required/></td></tr>
+            <tr><td><label>Postal Code:</label></td><td> <input type="text" id="postal" value="" required/></td></tr>
+            <tr><td> <label>Country:</label></td><td><input type="text" id="country" value="" required/></td></tr>
+            <tr><td><label>Phone:</label></td><td> <input type="text" id="phone" value="" required/></td></tr>
+            <tr><td> <label>Fax:</label></td><td <input type="text" id="fax" value="" required/></td></tr>                        
+            <tr><td><label>Email:</label></td><td><input type="text" id="email" value="" required/></td></tr>
+            <tr><td> <label>Payment By:</label></td><td> <input type="radio" name="pay" value="PayPal"/> <label>PayPal</label></td></tr>
+            <tr><td></td><td><input type="radio" name="pay" value="Manual:Pay on arrival"/><label> Manual:Pay on arrival</label></td></tr>
+            <tr><td></td><td><input type="radio" name="pay" value=" Credit Card"/><label> Credit Card</label></td></tr>
+            <tr><td><label>Any additional queries:</label></td><td><input type="textarea" name="area" id="area" required /></td></tr>
+            <tr><td></td><td><input type="checkbox" id="check"><label>I agree with the <a href="">Terms and Conditions</a></label></td></tr>
+            <tr><td></td><td><input type="submit" value="Submit" onclick="myfunction()"/> </td></tr>
+
+        </table>
+    </for>
+        </fieldset>
+
+        <script type="text/javascript">
+        function myfunction(){
+            
+            var x=document.getElementById("email").value;  
+            var a=x.indexOf("@");  
+            var b=x.lastIndexOf(".");  
+            var postal=document.getElementById("postal").value;
+            if(postal.length==6){
+                if (a<1 || b<a+2 || b+2>=x.length){  
+                alert("Please enter a valid e-mail address");
+                }
+                else{
+                    alert("successfull")
+                }  
+            }
+            else{
+                alert("Please enter a valid postal code")
+            }
+           
+        }
+            </script>
+
+    </body>
+</html>

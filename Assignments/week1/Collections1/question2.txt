@@ -1,0 +1,37 @@
+using System;
+using System.Collections;
+class ClsPerson{
+	private string name;
+	public string Name{
+		set{
+			this.name=value;	
+		}
+		get{
+			return this.name;
+		}
+	}
+}
+					
+public class Program
+{
+	public static void Main()
+	{
+		ArrayList a=new ArrayList();
+		ClsPerson p1=new ClsPerson();
+		ClsPerson p2=new ClsPerson();
+		ClsPerson p3=new ClsPerson();
+		ClsPerson p4=new ClsPerson();
+		p1.Name="Jack";
+		p2.Name="Jill";
+		p3.Name="Tom";
+		p4.Name="Jerry";
+		a.Add(p1);
+		a.Add(p2);
+		a.Add(p3);
+		a.Add(p4);
+		
+		foreach(ClsPerson i in a){
+			Console.WriteLine(i.Name);
+		}
+	}
+}

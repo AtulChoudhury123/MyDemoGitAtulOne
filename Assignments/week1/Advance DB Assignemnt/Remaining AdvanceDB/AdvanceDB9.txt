@@ -1,0 +1,25 @@
+create table Customers (
+customerid int primary key not null,
+companyname varchar(50) not null,
+contactname varchar(50) not null
+);
+
+create table newemployee(
+employeeid int primary key not null,
+firstname varchar(50) not null,
+lastname varchar(50) not null
+);
+
+create table Orders(
+orderid int primary key not null,
+customerid int not null foreign key references customers(customerid),
+employeeid int not null foreign key references newemployee(employeeid),
+orderdate date not null,
+requireddate date not null,
+shippeddate date not null
+);
+
+select orders.orderid, Customers.companyname, newemployee.firstname, newemployee.lastname 
+from orders inner  join Customers on Orders.customerid=Customers.customerid inner join employee
+ on Orders.employeeid=newemployee.employeeid where Orders.orderdate> convert(date,'1998-01-01')
+ and Orders.shippeddate>Orders.requireddate order by Customers.companyname;

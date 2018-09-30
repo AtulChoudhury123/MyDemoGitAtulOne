@@ -1,0 +1,288 @@
+using System;
+using System.Collections.Generic;
+//Account class
+
+class Account{
+	
+	private int accountNo;
+	private string accountType;
+	private	int debitCardNo;
+	private	int pin;
+	private	string loginId;
+	private	string password;
+	private	int balance;
+	
+	public int AccountNo{
+		set{
+			this.accountNo=value;	
+		}
+		get{
+			return this.accountNo;
+		}
+	}
+	
+	public string AccountType{
+		set{
+			this.accountType=value;	
+		}
+		get{
+			return this.accountType;
+		}
+	}
+	
+	public int DebitCardNo{
+		set{
+			this.debitCardNo=value;	
+		}
+		get{
+			return this.debitCardNo;
+		}
+	}
+	public int Pin{
+		set{
+			this.pin=value;	
+		}
+		get{
+			return this.pin;
+		}
+	}
+	public string LoginId{
+		set{
+			this.loginId=value;	
+		}
+		get{
+			return this.loginId;
+		}
+	}
+	public string Password{
+		set{
+			this.password=value;	
+		}
+		get{
+			return this.password;
+		}
+	}
+	public int Balance{
+		set{
+			this.balance=value;	
+		}
+		get{
+			return this.balance;
+		}
+	}
+		
+}
+
+
+//current class
+
+class Current:Account{
+	
+	private string companyName;
+	private string typeOfBussiness;
+	private string website;
+	private string contactName;
+	
+	public string CompanyName{
+		set{
+			this.companyName=value;	
+		}
+		get{
+			return this.companyName;
+		}
+	}
+	
+	public string TypeOfBussiness{
+		set{
+			this.typeOfBussiness=value;	
+		}
+		get{
+			return this.typeOfBussiness;
+		}
+	}
+	
+	public string Website{
+		set{
+			this.website=value;	
+		}
+		get{
+			return this.website;
+		}
+	}
+	
+	public string ContactName{
+		set{
+			this.contactName=value;	
+		}
+		get{
+			return this.contactName;
+		}
+	}
+	
+}
+
+//saving corporate class
+
+class Saving_Corporate{
+
+string companyName;
+public string CompanyName{
+		set{
+			this.companyName=value;	
+		}
+		get{
+			return this.companyName;
+		}
+	}	
+}
+
+class Transaction{
+	private int transactionId;
+	private double amount;
+	private DateTime transdate;
+	public int TransactionId{
+		set{
+			this.transactionId=value;
+		}
+		get{
+			return this.transactionId;
+		}
+	}
+	
+	public double Amount{
+		set{
+			this.amount=value;
+		}
+		get{
+			return this.amount;
+		}
+	}
+	
+	public DateTime Transdate{
+		set{
+			this.transdate=value;
+		}
+		get{
+			return this.transdate;
+		}
+	}
+}
+
+//Payee
+
+class Payee{
+	private int payeeId;
+	private int accNo;
+	private string accName;
+	private string bank;
+	public int AccNo{
+		set{
+			this.accNo=value;
+		}
+		get{
+			return this.accNo;
+		}
+	}
+	public int PayeeId{
+		set{
+			this.payeeId=value;
+		}
+		get{
+			return this.payeeId;
+		}
+	}
+	public string AccName{
+		set{
+			this.accName=value;
+		}
+		get{
+			return this.accName;
+		}
+	}public string Bank{
+		set{
+			this.bank=value;
+		}
+		get{
+			return this.bank;
+		}
+	}
+}
+
+
+//Bank Manager class
+
+class BankManager{
+	
+	static List<Account> l=new List<Account>();
+	
+	public static bool createAccount(Account acc){
+		Console.WriteLine("Enter accNo");
+		acc.AccountNo=Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("Enter accType");
+		acc.AccountType=Console.ReadLine();
+		Console.WriteLine("Enter debitcardno");
+		acc.DebitCardNo=Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("Enter pin");
+		acc.Pin=Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("Enter loginid");
+		acc.LoginId=Console.ReadLine();
+		Console.WriteLine("Enter password");
+		acc.Password=Console.ReadLine();
+		//Console.WriteLine("Enter balance");
+		//acc.Balance=Convert.ToInt32(Console.ReadLine());
+		
+		l.Add(acc);
+		
+		return true;
+	}
+	
+	public Account getAccountById(int n){
+		Account a1=null;
+		foreach(Account i in l){
+			if(i.AccountNo==n){
+				a1=i;
+				break;
+			}
+		}
+		
+		
+		return a1;
+	}
+	
+	public List<Account> getAllAccounts(){
+		return l;
+	}
+}
+
+
+public class Program
+{
+	public static void Main()
+	{
+		Account[] a=new Account[2];
+		BankManager bm =new BankManager();
+		for(int i=0;i<a.Length;i++){
+			a[i]=new Account();
+			if(BankManager.createAccount(a[i])){
+				Console.WriteLine("Account created ");
+			}
+		}
+		
+		//hardcoding this portion 
+		Account a1=bm.getAccountById(4);
+		Console.WriteLine("AccountNo={0}, Accounttype={1}, DebitCardNo={3}, pin={4}, loginId={5}, Password={5} , Balance={6}",
+						  a1.AccountNo,a1.AccountType,a1.DebitCardNo,a1.Pin, a1.LoginId, a1.Password, a1.Balance);
+		
+		List<Account> l1=bm.getAllAccounts();
+		
+		Console.WriteLine("Total account");
+		
+		foreach(Account i in l1){
+			
+			Console.WriteLine("AccountNo={0}, Accounttype={1}, DebitCardNo={3}, pin={4}, loginId={5}, Password={5} , Balance={6}",
+						  i.AccountNo,i.AccountType,i.DebitCardNo,i.Pin, i.LoginId, i.Password, i.Balance);
+		}
+		
+		
+	}
+}

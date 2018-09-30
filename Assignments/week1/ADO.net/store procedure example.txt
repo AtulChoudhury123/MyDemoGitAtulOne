@@ -1,0 +1,11 @@
+create procedure myProc
+@name varchar(30),
+@param3 int output
+As 
+select @param3 =count(*) from student where studentname=@name
+Go
+
+
+declare @param3 int;
+exec myProc 'Rose', @param3 output
+print @param3;

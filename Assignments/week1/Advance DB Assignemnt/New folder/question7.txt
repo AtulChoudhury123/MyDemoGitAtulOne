@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp10
+{
+    class ClsStudent
+    {
+        public string name;
+
+        public ClsStudent(string name)
+        {
+            this.name = name;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, ClsStudent> d = new Dictionary<string, ClsStudent>();
+            ClsStudent c1 = new ClsStudent("John");
+            ClsStudent c2 = new ClsStudent("Bill");
+            ClsStudent c3 = new ClsStudent("Meeta");
+            ClsStudent c4 = new ClsStudent("Jolly");
+            ClsStudent c5 = new ClsStudent("Bill");
+            if(!d.ContainsKey(c1.name))
+                d.Add(c1.name, c1);
+            if (!d.ContainsKey(c2.name))
+                d.Add(c2.name, c2);
+            if (!d.ContainsKey(c3.name))
+                d.Add(c3.name, c3);
+            if (!d.ContainsKey(c4.name))
+                d.Add(c4.name, c4);
+            if (!d.ContainsKey(c5.name))
+                d.Add(c5.name, c5);
+
+            foreach(KeyValuePair<string, ClsStudent> i in d)
+            {
+                Console.WriteLine("Key={0},  value={0}", i.Key, i.Value);
+            }
+
+            ClsStudent c = d["Meeta"];
+            Console.WriteLine("name is :{0}", c.name);
+        }
+    }
+}

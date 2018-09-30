@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    //assigment2 question2
+    class User
+    {
+        long userId;
+        string dateOfBirth;
+        string fullName;
+        string gender;
+        string loginId;
+        string userName;
+        string password;
+        public User()
+        {
+
+        }
+        public User(long userId, string dateOfBirth, string fullName, 
+            string gender, string loginId, string userName, string password)
+        {
+            this.userId = userId;
+            this.dateOfBirth = dateOfBirth;
+            this.fullName = fullName;
+            this.gender = gender;
+            this.loginId = loginId;
+            this.userName = userName;
+            this.password = password;
+        }
+
+        public User createUser(User u)
+        {
+            u.userId = long.Parse(Console.ReadLine());
+            u.dateOfBirth = Console.ReadLine();
+            u.fullName = Console.ReadLine();
+            u.gender = Console.ReadLine();
+            u.loginId = Console.ReadLine();
+            u.userName = Console.ReadLine();
+            u.password = Console.ReadLine();
+            new User(u.userId, u.dateOfBirth, u.fullName, u.gender, u.loginId, u.userName, u.password);
+            return u;
+        }
+        public void showData(User h)
+        {
+            Console.WriteLine("userid ={0} ,date of birth={1}, fullNAme={2}, gender={3}, loginid={4}, usename={5}, password ={6}",
+              h.userId, h.dateOfBirth, h.fullName, h.gender, h.loginId,h.userName,h.userName, h.password);
+        }
+    }
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("How many user");
+            int n = Convert.ToInt32(Console.ReadLine());
+            User[] h = new User[n];
+            User[] h2 = new User[n];
+            User h1 = new User();
+
+            for (int i = 0; i < h.Length; i++)
+            {
+                h[i] = new User();
+                h2[i] = h1.createUser(h[i]);
+            }
+
+            for (int i = 0; i < h2.Length; i++)
+            {
+                h1.showData(h2[i]);
+            }
+
+
+        }
+    }
+}

@@ -1,0 +1,31 @@
+using System;
+using System.Collections;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp18
+{
+    class ClsCustom:IEnumerable
+    {
+       public IEnumerator GetEnumerator()
+        {
+            yield return "100";
+            yield return "1001";
+            yield return "1002";
+            yield return "1003";
+        } 
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ClsCustom c = new ClsCustom();
+            foreach (object s in c)
+            {
+                Console.WriteLine(s.ToString());
+            }
+
+        }
+    }
+}

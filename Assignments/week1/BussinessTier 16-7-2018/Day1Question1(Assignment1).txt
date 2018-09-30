@@ -1,0 +1,60 @@
+using System;
+
+class Account{
+
+	private int accountNo;
+	public string accountType{get;set;}
+	public int debitCardNo{get;set;}
+	public int pin{get;set;}
+	public string loginId{get;set;}
+	public string password{get;set;}
+	public double balance{get;set;}
+	
+	public int AccountNo{
+		set{
+			this.accountNo=value;
+		}
+		get{
+			return this.accountNo;
+		}
+	}
+
+}
+
+class AccountMgr{
+	
+	public static Account storeData(Account a){
+		Console.WriteLine("\n Enter details for user");
+			a.AccountNo=Convert.ToInt32(Console.ReadLine());
+			a.accountType=Console.ReadLine();
+			a.debitCardNo=Convert.ToInt32(Console.ReadLine());
+			a.pin=Convert.ToInt32(Console.ReadLine());
+			a.loginId=Console.ReadLine();
+			a.password=Console.ReadLine();
+			a.balance=double.Parse(Console.ReadLine());
+		return a;
+	}
+	
+	public static void showData(Account a){
+		
+		Console.WriteLine("AccountNo ={0} , AccountType= {1}, DebitCardNo= {2},pin= {3} , LoginId={4}, password={5}, Balance={6}",
+						  a.AccountNo,a.accountType,a.debitCardNo,a.pin,a.loginId,a.password,a.balance);
+	}
+}
+
+
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Enter the number of accounts");
+		int n=Convert.ToInt32(Console.ReadLine());
+		Account[] a=new Account[n];
+		for(int i=0;i<a.Length;i++){
+			a[i]=new Account();
+			Account acc=AccountMgr.storeData(a[i]);
+			AccountMgr.showData(acc);
+			
+		}
+	}
+}

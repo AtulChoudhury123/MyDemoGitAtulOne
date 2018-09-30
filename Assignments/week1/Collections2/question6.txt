@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp9
+{
+    public class ClsStudent
+    {
+        public string name;
+        public int age;
+
+        public ClsStudent(string name, int age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<ClsStudent> l = new List<ClsStudent>()
+            {
+                new ClsStudent("Jack",19),
+                 new ClsStudent("Jill",20),
+                  new ClsStudent("Mack",34),
+                   new ClsStudent("Mill",60),
+            };
+
+            foreach(ClsStudent i in l)
+            {
+                Console.WriteLine(i.name+" "+i.age);
+            }
+            
+        }
+    }
+}

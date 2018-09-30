@@ -1,0 +1,105 @@
+
+<!Doctype html>
+<html>
+    <head>
+        <title>QuestionTwo</title>
+        <style type="text/css">
+        body{
+            background-color: #429ef4;
+        }
+        .container{
+            background-color: #e6f9ff;
+            margin-left: 70px;
+            margin-right: 70px;
+            margin-top: 80px;
+            height: 400px;
+            width: 88%;   
+        }
+        #topic{
+            text-align: center;
+            font-size: 30px;
+            text-decoration: underline;
+        }
+        .textcolor{
+            color: #0000cc;
+            text-align: center;
+        }
+       
+
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2 id="topic" class="textcolor">Joy Trip</h2>
+            
+            <table align="center" border="1">
+                <col width="80">
+                <col width="100">
+                <col width="100">
+                <col width="140">
+                <tr>
+                    <th colspan="4" class="textcolor">View My Schedule</td>
+                </tr>
+                <tr>
+                    <td height="40" class="textcolor">Select </td>
+                    <td height="40" class="textcolor">Status</td>
+                    <td height="40" class="textcolor">Start Time</td>
+                    <td height="40" class="textcolor"align="center">Total Fare(Rs)</td>
+                </tr>
+               <tr>
+                   <td colspan="4" style="background-color:yellow" class="textcolor">Luxry</td>
+               </tr>
+               <tr>
+                        <td class="textcolor"><input type="radio" id="l1" name="Luxry"></td>
+                        <td class="textcolor">Avaible</td>
+                        <td class="textcolor">9pm</td>
+                        <td class="textcolor">900</td>
+                </tr>
+                        <td class="textcolor"><input type="radio" id="l2" name="Luxry"></td>
+                        <td class="textcolor">Avaible</td>
+                        <td class="textcolor">10 pm</td>
+                        <td class="textcolor">900</td>
+                <tr>
+                        <td colspan="4" style="background-color:yellow" class="textcolor">Delux</td>
+                        
+                </tr>
+                <tr>
+                        <td class="textcolor"><input type="radio" id="d1" name="Luxry"></td>
+                        <td class="textcolor">Avaible</td>
+                        <td class="textcolor">8 pm</td>
+                        <td class="textcolor">700</td>
+                </tr>
+                <tr>
+                        <td class="textcolor"><input type="radio" id="d2" name="Luxry"></td>
+                        <td class="textcolor">Avaible</td>
+                        <td class="textcolor">9pm</td>
+                        <td class="textcolor">700</td>
+                </tr>
+                               
+            </table>
+            
+            <div align="center" style="padding-top: 50px">
+            <button type="submit" onclick="myfunction()">Submit</button>
+            </div>
+            </form>
+            <div align="center" style="padding-top: 10px">
+                    <button type="submit">Home</button>
+                    </div>
+        </div>
+
+        <script>
+            function myfunction(){
+                var flag=true;
+                var x=document.getElementById("l1").checked;
+                var y=document.getElementById("l2").checked;
+                var z=document.getElementById("d1").checked;
+                var m=document.getElementById("d2").checked;
+                
+               if((x==0 && y==0 && z==0 && m==0 )){
+                    alert("select any one");
+               }
+            }
+        </script>  
+       
+    </body>
+</html>

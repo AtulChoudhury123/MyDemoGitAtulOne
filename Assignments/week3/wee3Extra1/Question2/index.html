@@ -1,0 +1,123 @@
+
+<!Doctype html>
+<html>
+    <head>
+        <title>QuestionTwo</title>
+        <style type="text/css">
+        body{
+            background-color: #429ef4;
+        }
+        .container{
+            background-color: #e6f9ff;
+            margin-left: 70px;
+            margin-right: 70px;
+            margin-top: 80px;
+            height: 400px;
+            width: 88%;   
+        }
+        #topic{
+            text-align: center;
+            font-size: 30px;
+            text-decoration: underline;
+        }
+        .textcolor{
+            color: #0000cc;
+            text-align: center;
+        }
+       
+
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2 id="topic" class="textcolor">Joy Trip</h2>
+
+            <form name="myForm" onsubmit=" return myFunction()">
+            <table align="center" border="1">
+                <col width="">
+                <col width="300">
+                <tr>
+                    <td colspan="2" class="textcolor">Find My Schedule</td>
+                </tr>
+                <tr>
+                    <td class="textcolor">From</td>
+                    <td align="center"><input name="xfrom" class="fortext" type="text"></td>
+                </tr>
+                <tr>
+                        <td class="textcolor">To</td>
+                        <td align="center"><input name="xto" type="text"></td>
+                </tr>
+                <tr>
+                        <td class="textcolor">Travel Date(DD/MM/YYYY)</td>
+                        <td align="center"><input name="xdate" type="text"></td>
+                        <td>Time</td>
+                        <td>
+                            <select name="xtime">
+                                <option value="Any">Any</option>
+                                <option value="Before 6PM">Before 6PM</option>
+                                <option value="After 6PM">After 6PM</option>
+                            </select>
+                        </td>
+                </tr>
+                <tr>
+                        <td class="textcolor">Service Class</td>
+                        <td align="center">
+                            <select ="xservice">
+                                <option value="Any">Any</option>
+                                <option value="Delux">Delux</option>
+                                <option value="Luxry">Luxry</option>
+                            </select>
+                        </td>
+                </tr>  
+            </table>
+            
+            <div align="center" style="padding-top: 70px">
+            <input type="submit" value="submit"/>
+            </div>
+            </form>
+
+            <div align="center" style="padding-top: 30px">
+                    <button>Home</button>
+                    </div>
+        </div>
+        
+            <script>
+
+                function myFunction(){
+                    var flag=true;
+
+                    var datevalid= /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+                    var from1=document.forms["myForm"]["xfrom"].value; 
+                    var to1=document.forms["myForm"]["xto"].value;
+                    var dates1=document.forms["myForm"]["xdate"].value;
+                 
+                    if(from1.length == 0){
+                        alert("field is mandatory");
+                            flag=false;
+                    }
+                    else if(to1.length==0){
+                        alert("fields is mandatory");
+                            flag=false;
+                    }
+                    else if( dates1.length==0){
+                        alert("field is mandatory");
+                            flag=false;
+                    }
+                    else if(to1 == from1){
+                        alert("both have same value");
+                        flag=false;
+                    }
+                    else if(!(dates1.match(datevalid))){
+                        alert("date is not valid");
+                        flag=false;
+                    }
+                    else{
+                        flag=true;
+                    }
+
+                    return flag;
+                }
+                </script>
+       
+    </body>
+</html>

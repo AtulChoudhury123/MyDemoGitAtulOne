@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
+namespace ConsoleApp4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string c = "data source=.;database=DBOne;integrated security=SSPI";
+            SqlConnection conn = new SqlConnection(c);
+            SqlCommand cmd = new SqlCommand("delete from student where id=4;update student set studentname='Atul' where id=2; SELECT * FROM student", conn);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow i in dt.Rows)
+                {
+                    foreach (DataColumn j in dt.Columns)
+                    {
+                        Console.Write(i[j] + " ");
+                    }
+                    Console.WriteLine();
+                }
+            }
+            conn.Close();
+        }
+    }
+}

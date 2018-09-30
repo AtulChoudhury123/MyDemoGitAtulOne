@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace ConsoleApp12
+{
+    class InvalidPasswordException : Exception
+    {
+        string m;
+        public InvalidPasswordException(string msg)
+        {
+            m = msg;
+        }
+        public string getMessage()
+        {
+            return m;
+        }
+    }
+    class User
+    {
+        string loginId;
+        string password;
+
+        public string LoginId { get => loginId; set => loginId = value; }
+        public string Password { get => password; set => password = value; }
+    }
+    class UserConsole
+    {
+        public User acceptUserDetails(User u)
+        {
+            Console.WriteLine("enter userid");
+            u.LoginId = Console.ReadLine();
+            Console.WriteLine("enter password");
+            u.Password = Console.ReadLine();
+            return u;
+        }
+
+        public void showUserDetails(User u)
+        {
+            Console.WriteLine("UserId : {0} \n Passowrd :{1} ", u.LoginId,u.Password);
+        }
+
+        public void printMessage()
+        {
+            Console.WriteLine("Wellcome");
+        }
+    }
+
+    class UserManager
+    {
+      public void createUser()
+        {
+            UserConsole a = new UserConsole();
+            User b = new User();
+            User c=a.acceptUserDetails(b);
+
+            Regex regex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$");
+            Match match = regex.Match(c.Password);
+            if (!match.Success)
+            {
+                throw new InvalidPasswordException("Wrong UserId or Password");
+            }
+
+            a.showUserDetails(c);
+            a.printMessage();
+        }
+       
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            UserManager m = new UserManager();
+            try {
+                m.createUser();
+            }
+            catch (InvalidPasswordException e)
+            {
+                Console.WriteLine(e.getMessage());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+
+
+
+<form method="POST" action="/BookmainsController/SearchedBooks">
+                        <input type="hidden" name="id" value="@Html.Encode(item.BookId)">
+                        <input type="submit"/>
+                    </form>

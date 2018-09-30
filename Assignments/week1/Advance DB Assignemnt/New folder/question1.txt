@@ -1,0 +1,98 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class ClsStudent
+    {
+        private int studentId;
+        private string firstname;
+        private string lastName;
+
+        public int StudentId
+        {
+            set
+            {
+                this.studentId = value;
+            }
+            get
+            {
+                return this.studentId;
+            }
+        }
+        public string Firstname { get=> firstname; set => firstname = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+
+        static List<ClsStudent> l = new List<ClsStudent>();
+        public void AddStudent(ClsStudent c)
+        {
+            Console.WriteLine("enter student id");
+            c.StudentId= Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter fname");
+            c.Firstname = Console.ReadLine();
+            Console.WriteLine("enter lname");
+            c.LastName = Console.ReadLine();
+
+            l.Add(c);
+        }
+
+        public void GetStudent(int x)
+        {
+            foreach(ClsStudent i in l)
+            {
+                if (i.StudentId == x)
+                {
+                    Console.WriteLine("student id ={0} , first name={1}, second name={2}",
+                        i.StudentId, i.Firstname, i.LastName);
+                    break;
+                }
+            }
+        }
+
+        public void Remove(ClsStudent c)
+        {
+            foreach(ClsStudent i2 in l)
+            {
+                if (i2.StudentId == c.StudentId)
+                {
+                    l.Remove(i2);
+                    break;
+                }
+            }
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("How many students");
+            int n = Convert.ToInt32(Console.ReadLine());
+            ClsStudent[] st = new ClsStudent[n];
+            ClsStudent s = new ClsStudent();
+            for (int i = 0; i < st.Length; i++)
+            {
+                st[i] = new ClsStudent();
+                s.AddStudent(st[i]);
+            }
+
+            int x = Convert.ToInt32(Console.ReadLine());
+            s.GetStudent(x);
+
+            string ch = "";
+            do
+            {
+                Console.WriteLine("Enter the student id to remove");
+                ClsStudent c = new ClsStudent();
+                c.StudentId = Convert.ToInt32(Console.ReadLine());
+                s.Remove(c);
+                Console.WriteLine("want to delete more Y/N");
+                ch = Console.ReadLine();
+            } while (ch == "Y");
+            
+
+        }
+    }
+}

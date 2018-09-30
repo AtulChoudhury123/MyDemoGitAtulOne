@@ -1,0 +1,11 @@
+create procedure OneProc
+@studid int,
+@name varchar(50) output
+As
+select @name=studentname from student where id=@studid
+Go
+
+
+declare @name varchar(50);
+exec OneProc 3 ,@name output
+print @name; 

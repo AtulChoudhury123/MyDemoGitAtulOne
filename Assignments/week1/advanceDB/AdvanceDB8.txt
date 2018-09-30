@@ -1,0 +1,5 @@
+1. select c.countryid, c.countryname , avg(runsmade) as average from country c inner join player p on 
+c.countryid=p.countryid group by c.countryid, countryname;
+
+2. select p.playername , countryname , p.runsmade from player p ,(select c.countryid,
+c.countryname, avg(runsmade) as average from country inner join player p on c.countryid=p.countryid group by c.countryid, countryname) x where x.countryid=p.countryid and p.runsmade>x.average;

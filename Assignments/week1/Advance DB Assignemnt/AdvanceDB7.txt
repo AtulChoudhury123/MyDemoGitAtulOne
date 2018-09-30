@@ -1,0 +1,24 @@
+create table Category(
+id int Primary key, 
+CategoryName varchar(40)
+);
+
+create table SubCategory(
+SubCatId int not null,
+SubCategoryName varchar(40),
+CatId int foreign key references Category(id)
+constraint PK_Subcategoryid primary key(SubCatId)
+);
+
+create table Product(
+Pid int not null Primary key,
+ProductName varchar(40),
+SalesAmount int,
+SubCatId int foreign key references SubCategoryName(SubCatID)
+);
+
+
+select SubCategory.SubCategoryName , sum(SalesAmount) as TotalSale from Product right join SubCategory on
+ Subcategory.SubCatId =Product.SubCatId group by SubCategory.SubCatId , SubCategory.SubCategoryName order by SubCategory.SubCatId;
+
+select Category.CategoryName , sum(Product.SaleAmount) as TotalSales from Category left join SubCategory on Category.Id = SubCategory.CatId left join Product on SubCategory.SubCatId=Product.SubCatId group by Category.Category order by Category.Id;

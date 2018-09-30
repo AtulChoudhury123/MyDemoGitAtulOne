@@ -1,0 +1,49 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Enter frst array");
+		int n=Convert.ToInt32(Console.ReadLine()); 
+		int[] a=new int[n];
+		for(int y=0;y<n;y++){
+			a[y]=Convert.ToInt32(Console.ReadLine());
+		}
+		
+		
+		Console.WriteLine("Enter second array");
+		int m=Convert.ToInt32(Console.ReadLine()); 
+		int[] b=new int[m];
+		for(int x=0;x<m;x++){
+			b[x]=Convert.ToInt32(Console.ReadLine());
+		}
+		
+		int k=(a.Length>b.Length)?a.Length:b.Length;
+		int[] c=new int[k];
+		
+		int i=0;
+		int j=0;
+		int l=0;
+		while(i<n && j<m){
+			c[l]=a[i]+b[j];
+			i++;
+			j++;
+			l++;
+		}
+		
+		while(i<n){
+			c[l]=a[i];
+		}
+		
+		while(j<m){
+			c[l]=b[j];
+		}
+		
+		for(int p=0;p<c.Length;p++){
+			Console.Write(c[p]+" ");
+			
+		}
+		
+	}
+}

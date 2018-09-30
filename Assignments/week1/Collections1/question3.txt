@@ -1,0 +1,50 @@
+using System;
+using System.Collections;
+
+public class Program
+{
+	public static void Main()
+	{
+		Stack s=new Stack();
+		s.Push("String1");
+		s.Push("String2");
+		
+		s.Push("String4");
+		s.Push("String5");
+		
+		foreach(string i in s){
+			Console.WriteLine(i);
+		}
+		
+		ArrayList a=new ArrayList();
+		
+		foreach(string i in s){
+			a.Add(i);
+		}
+		
+		int count=0;
+		foreach(string i in a){
+			count++;
+			if(i=="String4")
+				break;
+		}
+		
+		a.Insert(count,"String3");
+		
+		s.Clear();
+		
+		for(int i=a.Count-1;i>=0;i--){
+			
+			s.Push(a[i]);
+		}
+		
+		Console.WriteLine("New Stack");
+		
+		foreach(string i in s){
+			Console.WriteLine(i);
+		}
+		
+		Console.WriteLine("topmost element");
+		Console.WriteLine(s.Peek());
+	}
+}

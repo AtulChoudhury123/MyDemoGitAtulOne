@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        public void dataManipulate(SqlCommand cmd, SqlConnection con)
+        {
+            cmd.CommandText = "insert into student values(6,'Rose',7,10); update student set studentname='Rocky' where id=3; delete from student where id=1";
+            cmd.Connection = con;
+            int x= cmd.ExecuteNonQuery();
+            Console.WriteLine(x);
+        }
+        public void totalAge(SqlCommand cmd, SqlConnection con)
+        {
+            cmd.CommandText = "select sum(age) as TotalAge from student";
+            cmd.Connection = con;
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+
+                for (int i = 0; i < rdr.FieldCount; i++)
+                {
+                    Console.Write(rdr.GetName(i) + " ");
+                    Console.Write(rdr.GetValue(i) + "  ");
+                }
+                Console.WriteLine();
+            }
+            rdr.Close();
+        }
+        static void Main(string[] args)
+        {
+            Program p1 = new Program();
+            Program p2 = new Program();
+            string c = "data source=.; database=DBOne; integrated security=SSPI";
+            SqlConnection con = new SqlConnection(c);
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            p1.totalAge(cmd,con);
+            p2.dataManipulate(cmd, con);
+            con.Close();
+        }
+    }
+}

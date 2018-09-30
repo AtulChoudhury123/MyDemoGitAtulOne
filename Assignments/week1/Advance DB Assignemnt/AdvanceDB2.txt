@@ -1,0 +1,11 @@
+1.update marks set mark= mark+5 from marks m, modules n 
+where m.module_code=n.module_code and m.module_code='Operating Systems';
+
+2.update students set surname=surname +' minds';
+
+3.delete from students where surname like '%n';
+
+4.select top 3 mark from marks order by mark desc;
+
+5.select s.student_no , m.module_code, (n.mark*100)/100 as mark from students s, modules m, marks n 
+where m.module_code=n.module_code and n.student_no=s.student_no ;

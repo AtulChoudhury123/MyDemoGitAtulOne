@@ -1,0 +1,146 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>QuestionOne</title>
+        <style type="text/css">
+        body{
+            background-color: #429ef4;
+        }
+        .container{
+            background-color: #e6f9ff;
+            margin-left: 70px;
+            margin-right: 70px;
+            margin-top: 80px;
+            height: 400px;
+            width: 88%;   
+        }
+        #topic{
+            text-align: center;
+            font-size: 30px;
+            text-decoration: underline;
+        }
+        .textcolor{
+            color: #0000cc;
+        }
+       
+
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2 id="topic" class="textcolor">Joy Trip</h2>
+            <form name="myForm"  onsubmit="return myFunction()">
+            <table align="center" border="1">
+                <col width="">
+                <col width="300">
+                <tr>
+                    <td colspan="2" class="textcolor">Book Ticket</td>
+                </tr>
+                <tr>
+                    <td class="textcolor">Customer Name</td>
+                    <td align="center"><input name="name1" type="text"></td>
+                </tr>
+                <tr>
+                        <td class="textcolor">Customer Mobile Number</td>
+                        <td align="center"><input name="mob" type="text"></td>
+                </tr>
+                <tr>
+                        <td class="textcolor">Source</td>
+                        <td align="center"><input name="source" type="text"></td>
+                </tr>
+                <tr>
+                        <td class="textcolor">Destination</td>
+                        <td align="center"><input name="dest" type="text"></td>
+                </tr>
+                <tr>
+                        <td class="textcolor">Travel Date(DD/MM/YYYY)</td>
+                        <td align="center"><input name="date" type="text"></td>
+                </tr>
+                <tr>
+                        <td class="textcolor">Amount</td>
+                        <td align="center"><input name="amt" type="text"></td>
+                </tr>
+            </table>
+            
+            <div align="center" style="padding-top: 70px">
+            <button type="submit" >Submit</button>
+            </div>
+            </form>
+        </div>
+        <div align="center" style="padding-top: 30px">
+            <button>Home</button>
+        </div>
+
+        <script type="text/javascript">
+
+        function myFunction(){
+        var flag=true;
+        var patdate= /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+        var letter=/^[A-za-z\s]*$/;
+        var name1=document.forms["myForm"]["name1"].value;
+        var mob=document.forms["myForm"]["mob"].value;
+        var scores=document.forms["myForm"]["source"].value;
+        var desti=document.forms["myForm"]["dest"].value;
+        var dates=document.forms["myForm"]["date"].value;
+        var amtt=document.forms["myForm"]["amt"].value;
+            
+      
+        if(name1.length==0){
+            alert("Required");
+            return false;
+        }
+        else if(mob.length==0){
+            alert("Required");
+            return false;
+        }
+        else if(scores.length==0){
+            alert("Required");
+            return false;
+        }
+        else if(desti.length==0){
+            alert("Required");
+            return false;
+        }
+        else if(dates.length==0){
+            alert("Required");
+            return false;
+        }
+        else if(amtt.length==0){
+            alert("Required");
+            return false;
+        }
+        else if((name1).length < 4){
+            alert("Name less than 4")
+            flag=false;
+        }
+        else if(!(name1.match(letter))){
+            alert("name not correct format");
+            flag=false;
+        }
+        else if(!(scores.match(letter))){
+            alert("source not correct format");
+            flag=false;
+        }
+        else if(!(desti.match(letter))){
+            alert("destination not correct format");
+            flag=false;
+        }
+        else if(!(dates.match(patdate))){
+            alert("date not in correct format");
+            flag=false;
+        }
+        else if(isNaN(amtt)){
+            alert("amount not correct format");
+            flag=false;
+        }
+        else{
+           flag=true;
+        }
+
+      return flag;
+
+        }
+        </script>
+            
+    </body>
+</html>

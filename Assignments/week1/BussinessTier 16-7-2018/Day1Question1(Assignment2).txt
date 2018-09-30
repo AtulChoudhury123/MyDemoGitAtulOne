@@ -1,0 +1,95 @@
+using System;
+
+class Current:Object{
+	
+	private string companyName;
+	private string typeOfBussiness;
+	private string website;
+	private string contactName;
+	
+	public string CompanyName{
+		set{
+			this.companyName=value;	
+		}
+		get{
+			return this.companyName;
+		}
+	}
+	
+	public string TypeOfBussiness{
+		set{
+			this.typeOfBussiness=value;	
+		}
+		get{
+			return this.typeOfBussiness;
+		}
+	}
+	
+	public string Website{
+		set{
+			this.website=value;	
+		}
+		get{
+			return this.website;
+		}
+	}
+	
+	public string ContactName{
+		set{
+			this.contactName=value;	
+		}
+		get{
+			return this.contactName;
+		}
+	}
+	
+	public override bool Equals(Object obj){
+		Current c=(Current)obj;
+		if(this.companyName==c.CompanyName && this.typeOfBussiness==c.TypeOfBussiness && this.website==c.Website && this.contactName==c.ContactName){
+			return true;	
+		}
+		else{
+			return false;
+		}
+	}
+	
+}
+					
+public class Program
+{
+	public static void Main()
+	{
+	
+		Current c1=new Current();
+		c1.CompanyName="Mindtree";
+		c1.TypeOfBussiness="IT";
+		c1.Website="mindtree.com";
+		c1.ContactName="Atul";
+		
+		Current c2=new Current();
+		c2.CompanyName="Mindtree";
+		c2.TypeOfBussiness="IT";
+		c2.Website="mindtree.com";
+		c2.ContactName="Atul";
+		
+		Current c3=new Current();
+		c3.CompanyName="Calsoft";
+		c3.TypeOfBussiness="IT";
+		c3.Website="calsoft.com";
+		c3.ContactName="Pati";
+		
+		if(c1.Equals(c2)){
+			Console.WriteLine("Both are equal");
+		}
+		else{
+			Console.WriteLine("Not equal");
+		}
+		
+		if(c1.Equals(c3)){
+			Console.WriteLine("Both are equal");
+		}
+		else{
+			Console.WriteLine("Not equal");
+		}
+	}
+}

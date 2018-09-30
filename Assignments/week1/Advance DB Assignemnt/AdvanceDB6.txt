@@ -1,0 +1,21 @@
+create procedure moveemployee 
+@empid int ,
+@deptid int
+as 
+begin Transaction T1
+if not exist(select 1 from departmenttable where departmentid=@deptid)
+begin 
+ insert into departmenttable values('Department'+convert(varchar, @deptid),@deptid, @empid);
+ update employeetable set departmentid=@deptid where id=@empid;
+end
+
+else
+ begin
+ declare @empcount int;
+ update employeetable set departmentid=@deptid where id=@empid;
+ select @empcount=count(*) from employeetable where departmentid=@deptid;
+ update departmenttable set employeestrength=@empcount where departmentid=@deptid;
+end
+commit transaction t1;
+
+exec moveemployee 1,4
