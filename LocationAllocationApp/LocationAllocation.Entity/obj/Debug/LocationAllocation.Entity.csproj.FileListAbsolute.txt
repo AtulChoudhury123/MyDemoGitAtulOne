@@ -1,0 +1,11 @@
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.Entity\bin\Debug\LocationAllocation.Entity.dll.config
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.Entity\bin\Debug\LocationAllocation.Entity.dll
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.Entity\bin\Debug\LocationAllocation.Entity.pdb
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.Entity\bin\Debug\EntityFramework.dll
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.Entity\bin\Debug\EntityFramework.SqlServer.dll
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.Entity\bin\Debug\EntityFramework.xml
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.Entity\bin\Debug\EntityFramework.SqlServer.xml
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.Entity\obj\Debug\LocationAllocation.Entity.csproj.CoreCompileInputs.cache
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.Entity\obj\Debug\LocationAllocation.Entity.csproj.CopyComplete
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.Entity\obj\Debug\LocationAllocation.Entity.dll
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.Entity\obj\Debug\LocationAllocation.Entity.pdb

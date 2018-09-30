@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "displayuser";
+}
+
+<h2>displayuser</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>Mid</th>
+        <th>LocationOne</th>
+        <th>LocationTwo</th>
+        <th>LocationTwo</th>
+        <th>Track</th>
+    </tr>
+    @foreach (var item in ViewBag.dispuser)
+    {
+
+     <tr class="bg-info">
+    @foreach (var i in item)
+    {
+    <td>
+        @i
+    </td>         
+    }
+    </tr>
+    }
+</table>
+

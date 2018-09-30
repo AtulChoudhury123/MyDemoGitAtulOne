@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Preferred Locations</h2>
+<form method="post" action="/LocationCntrls/Create" class="form-group">
+    <label>Mid</label>
+    <input type="number" name="Mid" class="form-control"/>
+    <label>Location One</label>
+    <select name="Location1" class="form-control">
+        @foreach(var item in ViewBag.disploc)
+        {
+            <option value="@item.id">@item.LocNames</option>
+        }
+    </select>
+    <label>Location Two</label>
+    <select name="Location2" class="form-control">
+        @foreach (var item in ViewBag.disploc)
+        {
+            <option value="@item.id">@item.LocNames</option>
+        }
+    </select>
+    <label>Location Three</label>
+    <select name="Location3" class="form-control">
+        @foreach (var item in ViewBag.disploc)
+        {
+            <option value="@item.id">@item.LocNames</option>
+        }
+    </select>
+    <label>Track</label>
+    <input type="text" name="Track" class="form-control"/><br />
+
+    <input type="submit" value="submit" class="btn btn-success" />
+</form>
+
+
+
+
+

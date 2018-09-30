@@ -1,0 +1,17 @@
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\bin\Debug\LocationAllocation.DataAccessLayer.dll.config
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\bin\Debug\LocationAllocation.DataAccessLayer.dll
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\bin\Debug\LocationAllocation.DataAccessLayer.pdb
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\bin\Debug\EntityFramework.dll
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\bin\Debug\LocationAllocation.Entity.dll
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\bin\Debug\LocationAllocation.Entity.pdb
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\bin\Debug\LocationAllocation.Entity.dll.config
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\bin\Debug\EntityFramework.xml
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\obj\Debug\LocationAllocation.DataAccessLayer.csprojAssemblyReference.cache
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\obj\Debug\LocationAllocation.DataAccessLayer.Migrations.atulone.resources
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\obj\Debug\LocationAllocation.DataAccessLayer.csproj.GenerateResource.cache
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\obj\Debug\LocationAllocation.DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\obj\Debug\LocationAllocation.DataAccessLayer.csproj.CopyComplete
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\obj\Debug\LocationAllocation.DataAccessLayer.dll
+D:\WorkspaceC#\LocationAllocationApp\LocationAllocation.DataAccessLayer\obj\Debug\LocationAllocation.DataAccessLayer.pdb
