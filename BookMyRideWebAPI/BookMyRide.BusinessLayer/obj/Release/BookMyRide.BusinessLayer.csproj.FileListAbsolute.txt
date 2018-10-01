@@ -1,0 +1,12 @@
+D:\ORCHARD\Gitlab\July2018\Projects\BookMyRide\Server\BookMyRide_WebAPI\BookMyRideWebAPI\BookMyRide.BusinessLayer\bin\Release\BookMyRide.BusinessLayer.dll
+D:\ORCHARD\Gitlab\July2018\Projects\BookMyRide\Server\BookMyRide_WebAPI\BookMyRideWebAPI\BookMyRide.BusinessLayer\bin\Release\BookMyRide.BusinessLayer.pdb
+D:\ORCHARD\Gitlab\July2018\Projects\BookMyRide\Server\BookMyRide_WebAPI\BookMyRideWebAPI\BookMyRide.BusinessLayer\bin\Release\BookMyRide.DataAccessLayer.dll
+D:\ORCHARD\Gitlab\July2018\Projects\BookMyRide\Server\BookMyRide_WebAPI\BookMyRideWebAPI\BookMyRide.BusinessLayer\bin\Release\BookMyRide.EntityLayer.dll
+D:\ORCHARD\Gitlab\July2018\Projects\BookMyRide\Server\BookMyRide_WebAPI\BookMyRideWebAPI\BookMyRide.BusinessLayer\bin\Release\EntityFramework.dll
+D:\ORCHARD\Gitlab\July2018\Projects\BookMyRide\Server\BookMyRide_WebAPI\BookMyRideWebAPI\BookMyRide.BusinessLayer\bin\Release\BookMyRide.DataAccessLayer.pdb
+D:\ORCHARD\Gitlab\July2018\Projects\BookMyRide\Server\BookMyRide_WebAPI\BookMyRideWebAPI\BookMyRide.BusinessLayer\bin\Release\BookMyRide.DataAccessLayer.dll.config
+D:\ORCHARD\Gitlab\July2018\Projects\BookMyRide\Server\BookMyRide_WebAPI\BookMyRideWebAPI\BookMyRide.BusinessLayer\bin\Release\BookMyRide.EntityLayer.pdb
+D:\ORCHARD\Gitlab\July2018\Projects\BookMyRide\Server\BookMyRide_WebAPI\BookMyRideWebAPI\BookMyRide.BusinessLayer\bin\Release\EntityFramework.xml
+D:\ORCHARD\Gitlab\July2018\Projects\BookMyRide\Server\BookMyRide_WebAPI\BookMyRideWebAPI\BookMyRide.BusinessLayer\obj\Release\BookMyRide.BusinessLayer.csprojResolveAssemblyReference.cache
+D:\ORCHARD\Gitlab\July2018\Projects\BookMyRide\Server\BookMyRide_WebAPI\BookMyRideWebAPI\BookMyRide.BusinessLayer\obj\Release\BookMyRide.BusinessLayer.dll
+D:\ORCHARD\Gitlab\July2018\Projects\BookMyRide\Server\BookMyRide_WebAPI\BookMyRideWebAPI\BookMyRide.BusinessLayer\obj\Release\BookMyRide.BusinessLayer.pdb
